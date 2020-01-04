@@ -16,11 +16,17 @@
         <h1 class="title">Stocks</h1>
         <div id="stocks">
             <div v-for="stock in stocks" class="stock">
-                <div class="lead">{{ stock.symbol }}: ${{ stock.price }}</div>
-                <div class="change">Change:
-                    <span :class="{ 'is-up': stock.changeDirection === '+', 'is-down': stock.changeDirection === '-' }">
-                        {{ stock.changeDirection }}{{ stock.change }}
-                    </span></div>
+                <transition name="fade" mode="out-in">
+                    <div class="list-item" :key="stock.price">
+                        <div class="lead">{{ stock.symbol }}: ${{ stock.price }}</div>
+                        <div class="change">Change:
+                            <span
+                                :class="{ 'is-up': stock.changeDirection === '+', 'is-down': stock.changeDirection === '-' }">
+                                {{ stock.changeDirection }}{{ stock.change }}
+                            </span>
+                        </div>
+                    </div>
+                </transition>
             </div>
         </div>
     </div>
