@@ -8,7 +8,8 @@
       "connectionStringSetting": "AzureCosmosDBConnectionString",
       "databaseName": "stocksdb",
       "collectionName": "stocks",
-      "createLeaseCollectionIfNotExists": "true"
+      "createLeaseCollectionIfNotExists": "true",
+      "feedPollDelay": 500
     }
   ]
 }
