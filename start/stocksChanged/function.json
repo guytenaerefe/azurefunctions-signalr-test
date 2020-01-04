@@ -10,6 +10,13 @@
       "collectionName": "stocks",
       "createLeaseCollectionIfNotExists": "true",
       "feedPollDelay": 500
-    }
+    },
+    {
+      "type": "signalR",
+      "name": "signalRMessages",
+      "connectionString": "AzureSignalRConnectionString",
+      "hubName": "stocks",
+      "direction": "out"
+    }    
   ]
 }
